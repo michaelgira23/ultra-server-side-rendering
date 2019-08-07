@@ -1,3 +1,5 @@
-export {
-	ussrServer
-} from '';
+const { UssrServer } = require('./src/ussr-server');
+
+module.exports = {
+	UssrServer
+};

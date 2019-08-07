@@ -1,8 +1,7 @@
 const port = 8642;
-const { ussrServer } = require('../index');
-const http = require('http');
+const { UssrServer } = require('../index');
 
-ussrServer(http, {
+new UssrServer({
 	port,
 	source: 'https://tobiasahlin.com/spinkit'
 });
