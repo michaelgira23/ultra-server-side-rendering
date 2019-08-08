@@ -2,6 +2,8 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 
+const { Ussr } = require('./ussr');
+
 /**
  * Routes incoming HTTP requests to its own USSR instance
  */
@@ -43,6 +45,8 @@ class UssrServer {
 		this.io.on('connection', socket => {
 			// Start USSR instance
 			console.log('io connected!');
+			const ussr = new Ussr(socket, this.options.source);
+			ussr.initialize();
 		});
 	}
 
